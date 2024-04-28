@@ -83,6 +83,7 @@ struct GalleryView: View {
                             .clipShape(Circle())
                             .overlay(Circle().stroke(Color.white.opacity(0.5), lineWidth: 1))
                             .onTapGesture {
+                                // Custom animation for image change
                                 withAnimation(.spring(duration: 0.6)){
                                     selectedAnimal = animal.image
                                 }
@@ -90,7 +91,7 @@ struct GalleryView: View {
                             }
                     }//: Loop
                 }//: Grid
-                //Deprecated in iOS 15
+                //Deprecated in iOS 15 without value
                 .animation(.easeOut, value: gridFixer)
                 .onAppear(perform: {
                     gridSwitch()
